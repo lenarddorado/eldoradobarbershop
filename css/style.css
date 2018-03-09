@@ -1,0 +1,97 @@
+
+	* {
+		box-sizing: border-box;
+	}
+
+	body {
+		font-family: sans-serif;
+		font-size: 1rem;
+		margin: 0;
+		line-height: 5px;
+		color: red;
+		overflow-x: hidden;
+		background-color: black;
+	}
+
+
+	
+
+	.btn {
+	background: #99AFC4;
+	color: white;
+	font-size: 30px !important;
+	padding: 60px 50px;
+	text-decoration: none;
+}
+
+
+.homepage-hero-module {
+  border-right: none;
+  border-left: none;
+  position: relative;
+}
+
+
+.video-con{
+  position: relative;
+  left: 0%;
+  height: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  background: #000;
+}
+
+
+.title-container {
+  z-index: 1000;
+  position: absolute;
+  top: 35%;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+}
+.description .inner {
+  font-size: 1em;
+  width: 45%;
+  margin: 0 auto;
+}
+.link {
+  position: absolute;
+  bottom: 3em;
+  width: 100%;
+  text-align: center;
+  z-index: 1001;
+  font-size: 2em;
+  color: #fff;
+}
+.link a {
+  color: #fff;
+}
+video {
+  position: absolute;
+  z-index: 0;
+  bottom: 0;
+
+}
+video.fillWidth {
+  width: 100%;
+}
+
+#logoI {
+  margin: 0 auto;
+  width: 100px;
+}
+
+#p1 {
+  font-family: 'Bevan', cursive;
+  font-size: 40px;
+}
+
+#p2 {
+  font-family: 'Bevan', cursive;
+font-family: 'Kameron', serif;
+}
+
+div.headline {
+  margin-top: 5px; 
+}

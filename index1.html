@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE-edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+	<title>Cap 1</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<!-- fontawesome library -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- animate.css -->
+	<link rel="stylesheet" href="animate.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Bevan|Kameron:700" rel="stylesheet">
+	
+</head>
+<body>
+
+
+
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="homepage-hero-module">
+    <div class="video-container">
+        <div class="title-container">
+            <div class="headline">
+                <p id="p1">Welcome to Our Site</p>
+                	<a href="home.html" class="btn "> Explore </a>
+            </div>
+        </div>
+        
+        <video autoplay loop muted class="fillWidth">
+            <source src="barber.mp4" type="video/mp4">
+            <source src="barber.ogg" type="video/ogv">
+            <source src="barber.webm" type="video/webm">
+            </video>
+        </div>
+    </div>
+</div>
+  
+        
+     
+
+<!-- /container -->
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<!-- incude all compiled plugins -->
+<script src="js/bootstrap.min.js"></script>
+
+
+<script type="text/javascript">	
+$( document ).ready(function() {
+
+    // Resive video
+    scaleVideoContainer();
+
+  
+    initBannerVideoSize('.video-container video');
+        
+    $(window).on('resize', function() {
+        scaleVideoContainer();
+        scaleBannerVideoSize('.video-container video');
+    });
+
+});
+
+/** Reusable Functions **/
+/********************************************************************/
+
+function scaleVideoContainer() {
+
+    var height = $(window).height();
+    var unitHeight = parseInt(height) + 'px';
+    $('.homepage-hero-module').css('height',unitHeight);
+
+}
+
+function initBannerVideoSize(element){
+    
+    $(element).each(function(){
+        $(this).data('height', $(this).height());
+        $(this).data('width', $(this).width());
+    });
+
+    scaleBannerVideoSize(element);
+
+}
+
+function scaleBannerVideoSize(element){
+
+    var windowWidth = $(window).width(),
+        windowHeight = $(window).height(),
+        videoWidth,
+        videoHeight;
+    
+    console.log(windowHeight);
+
+    $(element).each(function(){
+        var videoAspectRatio = $(this).data('height')/$(this).data('width'),
+            windowAspectRatio = windowHeight/windowWidth;
+
+        if (videoAspectRatio > windowAspectRatio) {
+            videoWidth = windowWidth;
+            videoHeight = videoWidth * videoAspectRatio;
+            $(this).css({'top' : -(videoHeight - windowHeight) / 2 + 'px', 'margin-left' : 0});
+        } else {
+            videoHeight = windowHeight;
+            videoWidth = videoHeight / videoAspectRatio;
+            $(this).css({'margin-top' : 0, 'margin-left' : -(videoWidth - windowWidth) / 2 + 'px'});
+        }
+
+        $(this).width(videoWidth).height(videoHeight);
+
+        $('.homepage-hero-module .video-container video').addClass('fadeIn animated');
+        
+
+    });
+}
+</script>
+
+
+
+
+	
+</body>
+</html>
